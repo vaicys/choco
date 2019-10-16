@@ -1,0 +1,1 @@
+@powershell -ExecutionPolicy Unrestricted -Command .\save-packages.ps1

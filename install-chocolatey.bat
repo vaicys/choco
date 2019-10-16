@@ -1,0 +1,1 @@
+@powershell -ExecutionPolicy Unrestricted -Command .\install-chocolatey.ps1
