@@ -1,1 +1,1 @@
-choco install packages.config
+choco install -y packages.config

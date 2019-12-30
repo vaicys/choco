@@ -3,6 +3,7 @@ $packageXml = ''
 choco list -lo -r |
     % { $_ -split '\|' | select -first 1 } |
     Where-Object {
+        $_ -CNotMatch "chocolatey" -And
         $_ -CNotMatch "\.install$" -And
         $_ -CNotMatch "\.extension$" -And
         $_ -CNotMatch "\.commandline$" -And
