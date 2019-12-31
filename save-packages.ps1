@@ -11,6 +11,7 @@ choco list -lo -r |
         $_ -CNotMatch "^jre" -And
         $_ -CNotMatch "^KB" -And
         $_ -CNotMatch "^DotNet" -And
+        $_ -CNotMatch "^netfx." -And
         $_ -CNotMatch "python." -And
         $_ -CNotMatch "vcredist[^\\-]"
     } |
