@@ -13,7 +13,10 @@ choco list -lo -r |
         $_ -CNotMatch "^DotNet" -And
         $_ -CNotMatch "^netfx." -And
         $_ -CNotMatch "python." -And
-        $_ -CNotMatch "vcredist[^\\-]"
+        $_ -CNotMatch "vcredist[^\\-]" -And
+        $_ -CNotMatch "teamviewer" -And
+        $_ -CNotMatch "anki" -And
+        $_ -CNotMatch "mpc-hc"
     } |
     % { $packageXml += "`n<package id=""$_"" />" }
 
