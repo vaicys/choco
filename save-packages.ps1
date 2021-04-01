@@ -3,20 +3,21 @@ $packageXml = ''
 choco list -lo -r |
     % { $_ -split '\|' | select -first 1 } |
     Where-Object {
-        $_ -CNotMatch "chocolatey" -And
-        $_ -CNotMatch "\.install$" -And
-        $_ -CNotMatch "\.extension$" -And
-        $_ -CNotMatch "\.commandline$" -And
-        $_ -CNotMatch "\.portable$" -And
-        $_ -CNotMatch "^jre" -And
-        $_ -CNotMatch "^KB" -And
+        $_ -NotMatch "chocolatey" -And
+        $_ -NotMatch "\.install$" -And
+        $_ -NotMatch "\.extension$" -And
+        $_ -NotMatch "\.commandline$" -And
+        $_ -NotMatch "\.portable$" -And
+        $_ -NotMatch "^jre" -And
+        $_ -NotMatch "^KB" -And
         $_ -CNotMatch "^DotNet" -And
-        $_ -CNotMatch "^netfx." -And
-        $_ -CNotMatch "python." -And
-        $_ -CNotMatch "vcredist[^\\-]" -And
-        $_ -CNotMatch "teamviewer" -And
-        $_ -CNotMatch "anki" -And
-        $_ -CNotMatch "mpc-hc"
+        $_ -NotMatch "^dotnet4.7" -And
+        $_ -NotMatch "^netfx." -And
+        $_ -NotMatch "python." -And
+        $_ -NotMatch "vcredist[^\\-]" -And
+        $_ -NotMatch "teamviewer" -And
+        $_ -NotMatch "anki" -And
+        $_ -NotMatch "mpc-hc"
     } |
     % { $packageXml += "`n<package id=""$_"" />" }
 
