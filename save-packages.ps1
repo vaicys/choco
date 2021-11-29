@@ -12,6 +12,8 @@ choco list -lo -r |
         $_ -NotMatch "^KB" -And
         $_ -CNotMatch "^DotNet" -And
         $_ -NotMatch "^dotnet4.7" -And
+        $_ -NotMatch "^dotnetcore" -And
+        $_ -NotMatch "^dotnet-[^sdk]" -And
         $_ -NotMatch "^netfx." -And
         $_ -NotMatch "python." -And
         $_ -NotMatch "vcredist[^\\-]" -And
