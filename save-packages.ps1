@@ -1,6 +1,6 @@
 $packageXml = ''
 
-choco list -lo -r |
+choco list -r |
     % { $_ -split '\|' | select -first 1 } |
     Where-Object {
         $_ -NotMatch "chocolatey" -And
